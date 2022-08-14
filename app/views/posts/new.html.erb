@@ -9,14 +9,14 @@
     </ul>
   </div>
 <% end %>
-<%= form_with model: @post do |form| %>
+<%= form_with(model: @post, data: { turbo: "false" }) do |form| %>
   <div class="title">
     Title
     <%= form.text_field :title, value: @post.title %>
   </div>
   <div class="Body">
     Body
-    <%= form.email_field :body, value: @post.body %>
+    <%= form.text_field :body, value: @post.body %>
   </div>
-  <%= form.submit "Submit" %>
+  <%= form.submit "Create" %>
 <% end %>
